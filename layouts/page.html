@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  {{ if and (not .Date.IsZero) (ne .Section "") }}
+  <p class="meta">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    {{ with .Params.status }} · <span class="status">{{ . }}</span>{{ end }}
+    {{ with .GetTerms "tags" }} · {{ range . }}<a class="tag" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a> {{ end }}{{ end }}
+  </p>
+  {{ end }}
+  {{ with .Params.stack }}
+  <ul class="stack">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>
+  {{ end }}
+  {{ .Content }}
+  {{ with .Params.repo }}<p><a href="{{ . }}">View the code on GitHub →</a></p>{{ end }}
+</article>
+{{ end }}

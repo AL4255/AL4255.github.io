@@ -1,0 +1,5 @@
+<footer class="site-footer">
+  <span>© {{ now.Year }} {{ site.Title }}</span>
+  {{ with site.Params.github }}<a href="{{ . }}">GitHub</a>{{ end }}
+  <a href="{{ "index.xml" | relURL }}">RSS</a>
+</footer>

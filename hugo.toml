@@ -1,0 +1,28 @@
+# The GitHub Action overrides baseURL at build time, so this only matters locally.
+baseURL = "https://example.org/"
+locale = "en-US"
+title = "alcodes"
+
+[params]
+  description = "Cloud and security notes, projects, and write-ups."
+  github = "https://github.com/AL4255"
+
+[menus]
+  [[menus.main]]
+    name = "Projects"
+    pageRef = "/projects"
+    weight = 10
+  [[menus.main]]
+    name = "Blog"
+    pageRef = "/posts"
+    weight = 20
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about"
+    weight = 30
+
+[markup.highlight]
+  style = "dracula"
+
+[taxonomies]
+  tag = "tags"

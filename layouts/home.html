@@ -1,0 +1,10 @@
+{{ define "main" }}
+<section class="intro">{{ .Content }}</section>
+
+<h2>Latest posts</h2>
+{{ partial "post-list.html" (first 5 (where site.RegularPages "Section" "posts")) }}
+<p><a href="{{ "posts/" | relURL }}">All posts →</a></p>
+
+<h2>Projects</h2>
+{{ partial "post-list.html" (where site.RegularPages "Section" "projects") }}
+{{ end }}

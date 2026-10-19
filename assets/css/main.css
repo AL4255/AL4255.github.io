@@ -1,0 +1,68 @@
+:root {
+  --bg: #fdfdfc;
+  --fg: #1d1d1f;
+  --muted: #6b6b70;
+  --accent: #0a7d5a;
+  --border: #e4e4e7;
+  --code-bg: #282a36;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111214;
+    --fg: #e6e6e9;
+    --muted: #9a9aa2;
+    --accent: #3ddc97;
+    --border: #2a2b30;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0 auto;
+  max-width: 44rem;
+  padding: 0 1rem;
+  background: var(--bg);
+  color: var(--fg);
+  font: 17px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+h1, h2, h3 { line-height: 1.25; }
+h2 { margin-top: 2.5rem; }
+
+.site-header {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  justify-content: space-between; align-items: center;
+  padding: 1.5rem 0; border-bottom: 1px solid var(--border);
+}
+.brand { font-weight: 700; font-family: ui-monospace, Menlo, monospace; color: var(--fg); text-decoration: none; }
+.site-header nav { display: flex; gap: 1.25rem; }
+.site-header nav a { color: var(--muted); text-decoration: none; }
+.site-header nav a:hover, .site-header nav a[aria-current] { color: var(--fg); }
+
+main { padding: 1rem 0 3rem; }
+.intro { font-size: 1.1rem; }
+
+.post-list { list-style: none; padding: 0; }
+.post-list li { padding: .75rem 0; border-bottom: 1px solid var(--border); }
+.post-list li > a { font-weight: 600; }
+.post-list time { color: var(--muted); font-size: .9rem; margin-left: .5rem; }
+.post-list p { margin: .25rem 0 0; color: var(--muted); font-size: .95rem; }
+
+.meta { color: var(--muted); font-size: .9rem; }
+.tag { margin-right: .25rem; }
+.status { text-transform: uppercase; font-size: .75rem; letter-spacing: .05em; }
+.stack { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.stack li {
+  font: .8rem ui-monospace, Menlo, monospace;
+  border: 1px solid var(--border); border-radius: 999px; padding: .1rem .6rem;
+}
+
+pre { padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: .9rem; }
+code { font-family: ui-monospace, Menlo, monospace; }
+:not(pre) > code { background: var(--border); padding: .1em .35em; border-radius: 4px; }
+img { max-width: 100%; height: auto; }
+
+.site-footer {
+  display: flex; gap: 1rem; padding: 1.5rem 0 3rem;
+  border-top: 1px solid var(--border); color: var(--muted); font-size: .9rem;
+}
