@@ -2,6 +2,7 @@
 baseURL = "https://example.org/"
 locale = "en-US"
 title = "alcodes"
+disableKinds = ["taxonomy", "term"]
 
 [params]
   description = "Cloud and security notes, projects, and write-ups."
@@ -23,6 +24,3 @@ title = "alcodes"
 
 [markup.highlight]
   style = "dracula"
-
-[taxonomies]
-  tag = "tags"
