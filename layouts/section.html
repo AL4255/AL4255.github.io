@@ -1,5 +1,9 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 {{ .Content }}
-{{ partial "post-list.html" .Pages }}
+{{ with .Pages }}
+{{ partial "post-list.html" . }}
+{{ else }}
+<p class="meta">Nothing here yet. Check back soon.</p>
+{{ end }}
 {{ end }}

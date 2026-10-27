@@ -1,4 +1,11 @@
 {{ define "main" }}
+<section class="intro">{{ .Content }}</section>
+
 <h2>Projects</h2>
 {{ partial "post-list.html" (where site.RegularPages "Section" "projects") }}
+
+{{ with first 5 (where site.RegularPages "Section" "posts") }}
+<h2>Recent posts</h2>
+{{ partial "post-list.html" . }}
+{{ end }}
 {{ end }}
